@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link href="../css/slideshow.css" rel="stylesheet" type="text/css" />
+<link href="../css/royalslider.css" rel="stylesheet" type="text/css"/>
+<link href="../css/rs-default.css" rel="stylesheet" type="text/css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="../js/jquery.royalslider.min.js"></script>
+<script src="../js/jquery-1.8.3.min.js"></script>
+
+  <script>	
+  
+  // Important note! If you're adding CSS3 transition to slides, fadeInLoadedSlide should be disabled to avoid fade-conflicts.
+jQuery(document).ready(function($) {
+  var si = $('#gallery-1').royalSlider({
+    addActiveClass: true,
+    arrowsNav: false,
+    controlNavigation: 'none',
+    autoScaleSlider: true, 
+    autoScaleSliderWidth: 960,     
+    autoScaleSliderHeight: 340,
+    loop: true,
+    fadeinLoadedSlide: false,
+    globalCaption: true,
+    keyboardNavEnabled: true,
+    globalCaptionInside: false,
+	controlNavigation: 'bullets',
+	sliderTouch: true,
+	startSlideId: 0,
+	enabled: true,
+	transitionSpeed: 600,
+	transitionType: 'move',
+	
+
+    visibleNearby: {
+      enabled: true,
+      centerArea: 0.5,
+      center: true,
+      breakpoint: 650,
+      breakpointCenterArea: 0.64,
+      navigateByCenterClick: true
+    }
+  }).data('royalSlider');
+
+  // link to fifth slide from slider description.
+  $('.slide4link').click(function(e) {
+    si.goTo(4);
+    return false;
+  });
+});
+
+</script>
+</head>
+
+<body>
+<div id="container">
+    <div id="gallery-1" class="royalSlider rsDefault visibleNearby">
+    <a class="rsImg" href="images/dance1.png" data-rsw="978" data-rsh="481"><!--Still Life: Vase with Twelve Sunflowers--><span>San Diego Sewing Comany</span></a>
+    <a class="rsImg" href="images/dance2.png" data-rsw="978" data-rsh="481">Mona Lisa<span>Leonardo da Vinci</span></a>
+    <a class="rsImg" href="images/dance3.png" data-rsw="978" data-rsh="481">American Gothic<span>Grant DeVolson Wood</span></a>
+    
+  </div>
+  </div>
+</body>
+
+<script>
+    jQuery(document).ready(function($) {
+        $(".royalSlider").royalSlider({
+            // options go here
+            // as an example, enable keyboard arrows nav
+            keyboardNavEnabled: true
+        });  
+    });
+</script>
+</html>

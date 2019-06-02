@@ -1,0 +1,325 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiraCosta College Dance Department</title>
+    <link href="css/miracosta_college_dance.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cinzel:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>
+
+    <!--google jquery reference-->
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+      $(function() {
+      	$("#slideshow > div:gt(0)").hide();
+      	var slides = setInterval ("slideIt()", 3000);
+      	var playing=true;
+      	
+      	$("#slideshow").click(function () {
+      		if (playing) {
+        		clearInterval(slides);
+        		playing = false;
+      		} else {
+        		slides = setInterval ("slideIt()",3000);
+        		playing= true;
+        		slideIt();
+      		}
+      	});	
+    	});
+      	
+    	function slideIt() {
+    		$("#slideshow > div:first")
+    		.fadeOut(1000)
+    		.next()
+    		.fadeIn(1000)
+    		.end()
+    		.appendTo("#slideshow");
+    	}
+
+       $(function() {
+        $("#gallery > div:gt(0)").hide();
+        var slides = setInterval ("slideGallery()", 3000);
+        var playing=true;
+        
+        $("#gallery").click(function () {
+          if (playing) {
+            clearInterval(slides);
+            playing = false;
+          } else {
+            slides = setInterval ("slideGallery()",3000);
+            playing= true;
+            slideGallery();
+          }
+        }); 
+      });
+        
+      function slideGallery() {
+        $("#gallery > div:first")
+        .fadeOut(1000)
+        .next()
+        .fadeIn(1000)
+        .end()
+        .appendTo("#gallery");
+      }
+    </script>
+
+    <!--header fade-->
+    <script src="js/header_fade.js"></script>
+    <!--fittext-->
+    <script src="js/jquery.fittext.js"></script>
+
+    <!--smoothscroll-->
+    <script>
+      $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html,body').animate({
+                scrollTop: target.offset().top
+              }, 1000);
+              return false;
+            }
+          }
+        });
+      });
+
+      // resize bg1 to fit viewport
+      $(document).ready(function() {
+        $("#bg1").height($(window).height());
+        $(window).resize(function() {
+          $("#bg1").height($(window).height());
+        });
+      });
+    </script>
+  </head>
+  <body>
+  <!--
+    ////////////////////
+   ///BEGIN HEADER/////
+  ////////////////////-->
+  <div class="header">
+    <div id="background"></div>
+    <div id="labels">
+      <!--<h1> &lt;<span class="sea">MiraCosta</span><span class="design">Dance</span>&gt; </h1>-->
+      <nav> 
+      <a href="#" id="menu-icon"></a>
+        <ul>
+          <li><a class="scroll" href="#bg7">Contact</a></li>
+          <li><a class="scroll" href="#bg5">Gallery</a></li>
+          <li><a target="_blank" href="http://www.miracosta.edu/instruction/dance/index.html">Curriculum</a></li>
+          <li><a class="scroll" href="#bg4">Faculty</a></li>
+          <li><a class="scroll" href="#bg3">Performances</a></li>
+          <li><a class="scroll" href="#bg2">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!--
+    ////////////////////
+   ///END HEADER////
+  ////////////////////-->  
+  <!--begin BUY TICKETS RIBBON-->
+  <section id="buy_tickets" class="slideDown"><a href="https://www.vendini.com/service/tickets/viewMember.html?m=96f87860674f21c7652ea2100305bf76&entry=1"><img src="images/ticket.png" alt="buy tickets button" /></a></section>
+  <!--end BUY TICKETS RIBBON-->
+
+  <!--begin FIRST SECTION-->
+  <div id="bg1">
+  	<section id="bg1_container">
+      <h2>MiraCosta Dance</h2>
+      <div id="performance"> Performance and aesthetics</div> 
+    </section>
+    <a class="scroll" id="learn_more" href="#bg2_container">
+    </a>
+    <div id="bottom"></div>
+    <div id="bottom_fill"></div>
+  </div>
+  <!--end FIRST SECTION-->
+
+  <!--begin SECOND SECTION-->
+  <section id="bg2">
+  	<section id="bg2_container">
+    	<h3 class="section-heading">About MiraCosta Dance</h3>
+      <article>
+        <strong>The mission</strong> of the MiraCosta dance department is to create artistic and academic excellence by engaging students in a diversity of dance techniques, choreography, performance, and scholarly practices. The department fosters student engagement through creative and critical thinking and values artistic exploration that enriches the individual, classroom, and community.
+      </article>
+      <article>
+     		<div id="slideshow">
+  			  <div><img src="images/img1.jpg"/></div>
+  			  <div><img src="images/img2.jpg"/></div>
+  			  <div><img src="images/img3.jpg"/></div>
+  			  <div><img src="images/img4.jpg"/></div>
+  			  <div><img src="images/img5.jpg"/></div>
+  		  </div>
+      </article>
+    </section>
+  </section>
+  <!--end SECOND SECTION-->
+
+  <section id="bg3">
+  	<section id="bg3_container">
+    	<h3 id="h3_performances">Upcoming Performances</h3>
+      <h4>Dance Explosion 2014</h4>
+      <article id="performance_description">
+        <p class="title">Artistic Director: Dave Massey</p>
+     	  <p>MiraCosta's Dance Department kicks up its fervor and proudly presents a spectacular concert featuring choreography by students and faculty in a variety of dance styles including ballet, jazz, modern, tap, contemporary and hip hop. Come experience the excitement!</p>
+      </article>
+      <article id="upcoming_events">
+        <p class="title">Performance Dates:</p>
+     	  <p>Thursday, May 8 - 7:30pm</p>
+        <p>Friday, May 9 - 7:30pm</p>
+        <p>Saturday, May 10 - 2:00pm</p>
+        <p>Saturday, May 10 - 7:30pm</p>
+        <p>Sunday, May 11 - 2:00pm</p>
+      </article>
+      <a class="button" href="#">
+        <button>
+          Buy tickets
+        </button>
+      </a>
+    </section> <!--end bg3_container"-->
+  </section><!--end bg3"-->
+
+  <!--begin FACULTY SECTION-->
+      
+  <section id="bg4">
+  	  <h3 class="section-heading">FACULTY</h3>
+      <ul id="faculty_container">
+        <li>
+          <img src="images/teresa_jankovic.jpg"/>
+          <a class="overlay" href="mailto:tavina@miracosta.edu">
+              <div class="outer">
+                <div class="middle">
+                  <div class="read_bio">Contact via Email</div>
+                </div>
+              </div>
+              <div class="bt1"></div>
+          </a>
+          <h5 class="faculty-member">Teresa Jankovic</h5>
+        </li>
+        <li>
+          <img src="images/ashley_mcconnell.jpg"/>
+          <a class="overlay" href="mailto:amcconnell@miracosta.edu">
+              <div class="outer">
+                <div class="middle">
+                  <div class="read_bio">Contact via Email</div>
+                </div>
+              </div>
+              <div class="bt1"></div>
+          </a>
+          <h5 class="faculty-member">Ashley McConnell</h5>
+        </li>
+        <li>
+            <img src="images/aubrey_siebert.jpg"/>
+            <a class="overlay" href="mailto:asiebert@miracosta.edu">
+              <div class="outer">
+                <div class="middle">
+                  <div class="read_bio">Contact via Email</div>
+                </div>
+              </div>
+              <div class="bt1"></div>
+            </a>
+            <h5 class="faculty-member">Aubri Siebert</h5>
+        </li>
+        <li>
+          <img src="images/sadie_weinberg.jpg"/>
+          <a class="overlay" href="mailto:phrogers@miracosta.edu">
+            <div class="outer">
+              <div class="middle">
+                <div class="read_bio">Contact via Email</div>
+              </div>
+            </div>
+            <div class="bt1"></div>
+          </a>
+          <h5 class="faculty-member">Trisha Hanada-Rogers</h5>
+        </li>
+      </ul>
+  </section>
+  <!--end FACULTY SECTION--> 
+
+  <!--begin GALLERY SECTION-->
+  <section id="bg5">
+    <section id="bg5_container">
+      <h3 class="section-heading">GALLERY</h3>
+      <p>
+        Select images from rehearsal of the upcoming event
+      </p>
+      <article>
+        <div id="gallery">
+          <div><img src="images/dance1.png"/></div>
+          <div><img src="images/dance2.png"/></div>
+          <div><img src="images/dance3.png"/></div>
+          <div><img src="images/dance4.png"/></div>
+          <div><img src="images/dance5.png"/></div>
+          <div><img src="images/dance6.png"/></div>
+          <div><img src="images/dance7.png"/></div>
+          <div><img src="images/dance8.png"/></div>
+        </div>
+      </article>
+    </section>
+  </section>
+  <!--end GALLERY SECTION-->
+
+  <!--start CONTACT SECTION-->
+    <div id="bg7">
+  	  <section id="bg7_container">
+      	<h3 class="section-heading">CONTACT</h3> 	
+        <div id="column_1">
+          <div id="bg7_text">
+            <p>Do you have any questions or comments you would like to share with the Mira Costa College Dance Department? Please message us and we will get back to you as soon as possible. Thank you!</p>
+          </div>
+        <div id="column1_row2">       
+          <div id="outer">
+            <div id="middle"> 
+              <h4>Dean Massey</h4> 
+            	<p>Department Chair</p>
+            	<p><strong>Office:</strong> Oceanside, Building 1500</p>
+            	<p><strong>Phone:</strong> 760-757-2121 x6302</p> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      <form action="mailto:jonweber09@gmail.com">
+        <h4 class="form-header">Get in touch with the Mira Costa Dance Department</h4>
+        <div class="form-group">
+          <input class="form-input" type="text" placeholder="Name*" required/>
+          <input class="form-input" type="email" placeholder="Email*" required/>
+          <textarea class="form-input" placeholder="Message*" wrap required></textarea>
+          <input type="submit" class="form-submit" placeholder="Send Message"/>
+        </div>
+      </form>
+    </div>
+  <!--end CONTACT SECTION-->  
+  </body>
+
+<!--bounce from left jquery (ribbon)-->
+  <script>
+  	$(window).scroll(function() {
+  		$('#buy_tickets').each(function(){
+  		var imagePos = $(this).offset().top;
+
+  		var topOfWindow = $(window).scrollTop();
+  			if (imagePos < topOfWindow+400) {
+  				$(this).addClass("slideLeft");
+  			}
+  		});
+  	});
+  </script>
+
+  <!--fittext-->
+  <script type="text/javascript">
+		$("h2").fitText(1.2, { minFontSize: '34px', maxFontSize: '100px' });
+		$("#perfromances").fitText(1.2, { minFontSize: '20px', maxFontSize: '50px' });
+		$("h3").fitText(1.5, { minFontSize: '25px', maxFontSize: '50px' });
+	</script>
+</html>
